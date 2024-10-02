@@ -1,0 +1,148 @@
+
+:root{
+    --color-pri : #353b48;
+    --color-sec : #f5f6faf6;
+    --dark-color : #000;
+    --white-color : #fff;
+    --base-fontsize : 1rem;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a:link, a:visited {
+   text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    background-color: var(--color-pri);
+    color: var(--white-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.outerSetion{
+    padding: 3.123rem 0;
+}
+
+.outerSetion .heading{
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    text-transform: capitalize;
+}
+
+.navbar1{
+    background-color: var(--color-sec);
+    display: flex;
+}
+
+.navbar1 li{
+    flex-grow: 1;
+}
+
+
+.navbar1 li a{
+    display: block;
+    text-align: center;
+    padding: 1.25rem;
+    text-transform: capitalize;
+    font-size: 1rem;
+    color: var(--color-pri);
+}
+
+.navbar1 li a:hover,
+.navbar1 li a:active,
+.navbar1 li a:focus{
+    background-color: var(--white-color);
+}
+
+.menuToggleBtn{
+    display: none;
+}
+
+.navbar2{
+    display: flex;
+    background-color: var(--color-sec);
+}
+
+.navbar2 li{
+    flex-grow: 1;
+}
+
+.navbar2 li a {
+    display: flex;
+    padding: 1.35rem;
+    color: var(--color-pri);
+    transition: all .4s ease-in-out;
+}
+
+/* .navbar2 li a:hover,
+.navbar2 li a:active,
+.navbar2 li a:focus{
+    background-color: var(--white-color);
+} */
+
+.navbar2 li a:is(:hover,:focus,:active){
+    background-color: rgba(103, 205, 181, 0.34);
+    color: var(--color-pri);
+}
+
+.icon{
+    width: 70px;
+    text-align: center;
+    align-self: center;
+}
+
+.info{
+    flex-grow: 1;
+}
+
+.info h4{
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.info span{
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+@media all and (max-width : 700px){
+    .navbar1,.navbar2{
+        flex-direction: column;
+        display: none;
+    }
+    .navbar1.show, .navbar2.show{
+        display: flex;
+    }
+    .outerSetion .heading{
+        margin-bottom: 0;
+    }
+    .headingWrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menuToggleBtn{
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+    }
+}
